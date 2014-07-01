@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+// Put all of our code inside of an Immediately Invoked Function Expression, 
+// and then pass the function jQuery, and name the parameter \$
+(function(\$) {  
+    
+    // Add a function same as our desired plugin name to \$.fn. 
+    // and it will be available just like any other jQuery object method
+    \$.fn.${1:PLUGINNAME} = function(options) {  
+  
+  		// An object literal to accept options from plugin user
+        var defaults = {  
+            $2  
+        },  
+  
+  		// Defaults values are overridden by \$.extend()
+        options = \$.extend(defaults, options);  
+
+        // Use .each() to loop through an elements if we 
+        // have to do any manipulating with specific elements      
+        this.each(function() {  
+          
+            var \$this = \$(this);        
+              
+            $3  
+  
+  			// Making our plugin method chainable
+            return this;  
+          
+        });
+      
+    }  
+      
+})(jQuery);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jqueryplugin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
